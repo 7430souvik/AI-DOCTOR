@@ -53,21 +53,22 @@ def text_to_speech_with_gtts(input_text, output_filepath):
         slow=False
     )
     audioobj.save(output_filepath)
-    os_name=platform.system()
-    try:
-        if os_name== "Darwin":
-            subprocess.run(["open", output_filepath])
-        elif os_name=="Windows":
-            subprocess.run(["powerShell", "-Command", f"Start-Process '{output_filepath}'"])
-        elif os_name=="Linux":
-            subprocess.run(["aplay", output_filepath])
-        else:
-            raise OSError("Unsupported operating system")
-    except Exception as e:
-        print(f"An error occurred while trying to play the audio: {e}")
+    return output_filepath
+    # os_name=platform.system()
+    # try:
+    #     if os_name== "Darwin":
+    #         subprocess.run(["open", output_filepath])
+    #     elif os_name=="Windows":
+    #         subprocess.run(["powerShell", "-Command", f"Start-Process '{output_filepath}'"])
+    #     elif os_name=="Linux":
+    #         subprocess.run(["aplay", output_filepath])
+    #     else:
+    #         raise OSError("Unsupported operating system")
+    # except Exception as e:
+    #     print(f"An error occurred while trying to play the audio: {e}")
 
-input_text="Hello, I am your AI doctor.new version testing!"
-text_to_speech_with_gtts(input_text=input_text, output_filepath="gtts_testing_autoplay.mp3")
+# input_text="Hello, I am your AI doctor.new version testing!"
+# text_to_speech_with_gtts(input_text=input_text, output_filepath="gtts_testing_autoplay.mp3")
 
 def text_to_speech_with_elevenlabs(input_text,output_filepath): 
     client = ElevenLabs(api_key=ELEVENLABS_API_KEY)
@@ -93,4 +94,4 @@ def text_to_speech_with_elevenlabs(input_text,output_filepath):
         print(f"An error occurred while trying to play the audio: {e}")
 
 
-text_to_speech_with_elevenlabs(input_text=input_text, output_filepath="elevenlabs_testing_autoplay.mp3")
+# text_to_speech_with_elevenlabs(input_text=input_text, output_filepath="elevenlabs_testing_autoplay.mp3")
