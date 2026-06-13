@@ -20,6 +20,8 @@ keep your answer concise( max 2 sentences). No preamble, start your answer right
 
 
 def process_inputs(audio_filepath, image_filepath):
+    print("Audio filepath:", audio_filepath)
+    print("Image filepath:", image_filepath)
     if audio_filepath:
 
         speech_to_text_output = transcribe_with_groq(
