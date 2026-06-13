@@ -41,9 +41,9 @@ def record_audio(file_path, timeout=20, phrase_time_linit=None):
     except Exception as e:
         logging.error(f"An error occurred while recording audio: {e}")
 
-audio_file_path = "patient_voice.wav" 
+# audio_file_path = "patient_voice.wav" 
 
-record_audio(file_path=audio_file_path)
+# record_audio(file_path=audio_file_path)
 
 #setup speech to text-STT-model for transcription
 from dotenv import load_dotenv
