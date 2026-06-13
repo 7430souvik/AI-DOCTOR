@@ -20,12 +20,15 @@ keep your answer concise( max 2 sentences). No preamble, start your answer right
 
 
 def process_inputs(audio_filepath, image_filepath):
+    if audio_filepath:
 
-    speech_to_text_output = transcribe_with_groq(
-        GROQ_API_KEY=os.environ.get("GROQ_API_KEY"),
-        audio_file_path=audio_filepath,
-        stt_model="whisper-large-v3-turbo"
-    )
+        speech_to_text_output = transcribe_with_groq(
+            GROQ_API_KEY=os.environ.get("GROQ_API_KEY"),
+            audio_file_path=audio_filepath,
+            stt_model="whisper-large-v3-turbo"
+        )
+    else:
+        speech_to_text_output = ""
 
     if image_filepath:
         doctor_response = analyze_image_with_query(
