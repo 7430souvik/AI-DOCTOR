@@ -9,4 +9,4 @@ An AI-powered multimodal medical assistant that combines:
 - Text-to-Speech using ElevenLabs / gTTS
 - Gradio Interface
 
-![Demo Image](/home/souvik/Desktop/AI-Doctor/images/pro_pic.png)
+![Demo Image](./images/pro_pic.png)
